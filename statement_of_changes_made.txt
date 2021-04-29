@@ -1,0 +1,12 @@
+changes to lab 3:
+
+-updated priority of tasks:
+LED0-1
+Capsense 2
+Btn 3
+
+-Took OSTimeDly from LED Task, instead added pend to semaphore, which is posted on by 
+buttons and capsense task.  
+
+-Changed period of Button task delay to 50 ticks because I saw in systemview it was conflicting 
+with the capsense task every time

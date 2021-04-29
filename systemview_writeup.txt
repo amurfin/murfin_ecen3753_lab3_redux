@@ -1,0 +1,16 @@
+"segger_overall_task_periodicity.png"
+In this, you can see the slider task running every 100ms, and the buttn task running every 50ms.
+The idle task is running the rest of the time.
+
+"segger_capsense_btn_and_led.png"
+In this, you can see a zoomed in case of the slider task.  You can see that the button task
+attempts to run in the middle of the capsense task, but it is lower priority and is blocked.
+We can see the LED task run immediately following the capsense task, and then again immediately 
+following the button task.  After the second led update, the scheduler brings the cpu back into
+the button task, to restart the delay timer (which is fine).
+
+"segger_2nd_btn_and_led.png"
+In this, you can see a zoomed in case of the 2nd iteration of the button task, and its LED update.
+This is the execution that is aligned to run directly between instances of the slider task. 
+I found that by changing the period of the button task to 50 ticks, I was able to solve the 
+flickering LED issue.

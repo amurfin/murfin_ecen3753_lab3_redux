@@ -1,0 +1,23 @@
+lab2: (polling)
+no leds = 2.01mA 
+1 slider led = 2.49mA
+1 button led = 2.58mA
+2 leds = 2.97mA
+
+lab2: (interrupt w/EM1)
+no leds = 898.5uA = 0.8985mA
+1 slider led = 1.38mA
+1 button led = 1.47mA
+2 leds = 1.95mA
+
+lab 3: (w/idle EM1 task)
+no leds		966uA
+1 slider led	1.46mA
+1 button led	1.55mA
+both leds	2.04mA
+
+lab 3: (w/o idle task)
+no leds		1.44mA
+1 slider led	1.93mA
+1 button led	2.02mA
+both leds	2.52mA
